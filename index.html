@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OR Scenic Byways</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--meta data for sharing links on Facebook
+    ADDED MY ME-->
+    <meta property="og:title" content="Scenic Byways in Southwest Oregon" />
+    <meta property="og:url" content="http://cdn.rawgit.com/stribyw/scenic-byways-SWOregon/master/index.html" />
+    <meta property="og:description" content="Routes and Details of Southwest Oregon's Scenic Byways" />
+    <meta property="og:image" content="img/social.png" />
+
+    <!--add required stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+    <!--facebook and info icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--CHANGE FONT?-->
+
+    <!--storymap stylesheet -->
+    <link rel="stylesheet" href="css/storymap.css" />
+
+    <!--add favicon for the web page-->
+    <link rel="shortcut icon" href="img/cascadiaFavicon.ico" type="image/x-icon">
+
+    <!--add required libraries-->
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--I ADDED-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!--add ajax based data transmission-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!--storymap javascript library -->
+    <script src="js/storymap.js"></script>
+
+    <!-- bing map -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"></script>
+    <script src="http://gmaclennan.github.io/leaflet-bing-layer/leaflet-bing-layer.js"></script>
+
+    <!-- mini globle map -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="js/globeminimap.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 main">
+            <h1 class="page-header">Scenic Byways & Tour Routes of Southwest Oregon<br/>
+                <small style="font-size: 12pt">Keith Striby, stribyw@oregonstate.edu, Oregon State University</small></h2>
+            <section data-scene="overview">
+                <h2>Welcome</h2>
+                <p>Oregon's roads showcase the state's grandeur. The ability to access Oregon's diverse natural beauty, as well as historical and culture sites, has earned it more designated Scenic Byways and Tour Routes than any other state.</p>
+                <p>In southwest Oregon you can experience Crater Lake, Klamath Falls, Umpqua River, Rogue River and Gorge, whale-watching excursions from the Charleston Marina, the Coquille River Lighthouse, and so much more.</p>
+                <p>Routes are categorized into All-American Roads, National Scenic Byways, State Scenic Byways, and Tour Routes. Remember to visit ODOT's <a href="https://tripcheck.com/Pages/RCMap.asp" target="_blank">Trip Check</a> to check the status routes before leaving.</p>
+            </section>
+
+            <section data-scene="CharlestonBandon">
+                <h2>Charleston to Bandon Tour Route</h2>
+                <p>Starting at Cape Arago State Park, you have an overlook letting you peer down at the boisterous barking sea lions and bobbing seals at Simpson Reef. Traveling north along the Cape Arago Highway you'll rise high above the Pacific on a rocky headland to the Cape Arago Lighthouse, and then either go south on Seven Devils Road or make a stop in Charleston. The fishing port of Charleston sits at the entrance to the deep-water port of Coos Bay, where fishing fleets and freighters find refuge from the open ocean.</p>
+                <p>Traveling south on Seven Devils Road you quickly arrive to the South Slough National Estuarine Research Reserve where rich tidal flats are explorable with kayaks and boardwalk trails. Continuing south you'll see low lying cranberry bogs, and just before crossing the Coquille River turn west into Bullards Beach State Park. Here you'll find beautiful beaches and the Coquille River Lighthouse and the town Bandon just across the Coquille River. Backtracking to US-101 you will briefly continue south, and then take a turn west onto Beach Loop Road. The rocky shore of Bandon State Natural Area with its seascape of craggy stacks and surf.</p>
+            </section>
+
+            <section data-scene="UmpquaRiver">
+                <h2>Umpqua River Scenic Byway</h2>
+                <p>Before traveling on the byway and just off of interstate is the town of Oakland and "historic row," a National Historic Landmark. There you'll find antique stores and well-preserved 19-century brick buildings, antique stores, museums, and a glimpse of a once busy railroad stop. The town of Sutherlin is just south and the last chance for fuel or a bite to eat before heading northwest on OR-138. The Umpqua River will meet the byway on its crooked course flowing from the Cascade mountains approximately 12 miles from Sutherlin.</p>
+                <p>Between Kellogg and Elkton is a loopy and scenic stretch of river that offers some of the West's finest smallmouth bass fishing. Shortly thereafter you'll meet OR-38 and continue west and stumble upon Umpqua Valley's unique topography housing a coastal microclimate, producing a surprisingly diverse mix of high-quality wines. In Elkton are winery tasting rooms showcasing pinot noir, pinot gris, cabernet sauvignon, and merlot along with several restaurants. West of Elkton are great river views and the eventual calming of the white water caused by ocean tides before the byway concludes at US-101 and Reedsport. Just sout on US-101 is Winchester Bay and the spectacular Oregon Dunes National Recreation Area, miles and miles of sand dunes scretching all the way to Coos Bay.</p>
+            </section>
+
+            <section data-scene="CowCreek">
+                <h2>Cow Creek Tour Route</h2>
+                <p>The tour begins 21 miles south of Roseburg at exit 103, and before traveling west on Riddle Bypass Road is your only place to fuel up. Riddle contains remnants of the town's nickel mine and mine tailings, which was spurred due to the arrival of the railroad. The route the parallels with Cow Creek and the route of the original Oregon and California railroad built in the 1870's where many historic railroad structures still stand. Just after Tunnel Number One is the public Recreational Gold Panning Area where it is estimated that miners found 25 percent of Oregon's take of the gold-rush. The tour route takes you through fir forests, under rugged buttes, and along mountains. In the spring waterfalls and wildflowers put on a show, while autumn turns the hardwoods fiery gold and red. Continue along Cow Creek Road where the tour ends just a few miles beyond Glendale at exit 80 and I-5.</p>
+            </section>
+
+            <!-- <section data-scene="MyrtleCreekCanyonville">
+                <h2>Myrtle Creek-Canyonville Tour Route</h2>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+                <p>text</p>
+            </section> -->
+
+            <section data-scene="RogueUmpqua">
+                <h2>Rogue-Umpqua Scenic Byway</h2>
+                <p>The Rogue and Umpqua Rivers are two of Oregon's most storied, both for their world famous fishing and rafting and for their primal beauty. Traditionally a timber town, Roseburg today is known for recreational fishing, and a growing number of wineries and microbreweries. From Roseburg, the byway leads east through scenic oak-dotted hills and meets up with the North Umpqua near Glide. Traveling upstream, the byway follows the North Umpqua where you're likely to spot anglers casting for trout, salmon, and summer steelhead, native oceangoing rainbow trout that can reach 20 pounds. Hikers and mountain bikers are captivated by the North Umpqua Trail that winds for 79 miles along the river's banks. With more than 15 cascades along its route, the byway has earned the nickname "Highway of Waterfalls." Well-marked trails provide several overlooking views of the river's canyons.</p>
+                <p>Past Toketee Lake, OR-138 bits farwell to the North Umpqua and turns south to skirt the shores of Diamond Lake. Framed by 9,200-foot Mt. Thielsen and 8,363-foot Mt. Bailey, Diamond Lake is a jewel of the Cascade Mountains. At the end of Diamond Lake OR-138 continues south toward Crater Lake National Park. The Rogue-Umpqua Scenic Byway joins OR-230 and swings southwest into the Rogue River-Siskiyou National Forest, where the Rogue emerges from underground lava tubes. The byway joins OR-62 just north of Union Creek, the western terminus of a wagon road for settlers crossing the Cascades. The byway passes several campground and fishing spots as it follows the Rogue downstream. At Joseph H. Stewart State Recreation Area, the river widens into Lost Creek Lake. Eventually the byway joins OR-234 and ends at Gold Hill, which is less than an hour from Medford, Ashland, and Grants Pass.</p>
+            </section>
+
+            <section data-scene="OR138CraterKlamathUS97">
+                <h2>Volcanic Legacy Scenic Byway</h2>
+                <p>The byway begins on US-97 at Diamond Lake Junction, where OR-138 climbs west through the Fremont-Winema National Forest to Crater Lake National Park. The North Entrance Road leads into the park across a pumice desert moonscape, evidence of the massive eruption of ancient Mt. Mazama. Its crater collapsed from the force, forming the caldera that created the 1,943-foot-deep lake. Your first unforgettable look of Crater Lake comes at Merriam Point near North Junction, where the byway meets the Rim Drive, a 33-mile road that encircles the lake. Cleetwood Cove trail, Skell Head, and Cloudcap Overlook all provide excellent views of the lake. At Rim Village you'll find Crater Lake Lodge and the Steel Visitors Center. Ranger-led boat tours allow you to visit Wizard Island, which rises more than 700 feet above the water's surface.</p>
+                <p>From the national park's south entrance, OR-62 leads southeast to Fort Klamath and eventually to the Upper Klamath National Wildlife Refuge and Upper Klamath Lake on West Side Road. Covering over 133 square miles, Upper Klamath is Oregon's largest freshwater lake; together with the adjacent wetlands and other area lakes, the Klamath Basin forms one of the largest freshwater ecosystems west of the Great Lakes. In the shadow of 9,495-foot Mt. McLoughlin, the byway joins OR-140 and sidles up alongside the lake at Howard Bay. At the lake's southern end is Klamath Falls where hiking trails along waterways offer good spots to stretch your legs and do a little bird-watching. The byway continues on US-97 south of Klamath Falls, ending at two more of the refuges in the Klamath Basin along State Line Road just as you cross into California: Bear Valley National Wildlife Refuge and Lower Klamath National Wildlife Refuge.</p>
+            </section>
+
+            <div class="glyphicon glyphicon-chevron-down arrow-down"></div>
+        </div>
+
+        <div id="map" class="col-sm-0 col-md-0 sidebar"></div>
+
+    </div>
+    <!--facebook icon-->
+    <!--UPDATE href link below!-->
+    <a class="fa fa-facebook-square btn" href="https://facebook.com/sharer.php?u=http://cdn.rawgit.com/stribyw/scenic-byways-SWOregon/master/index.html" target="_blank"></a>
+    <!--info icon-->
+    <i class="fa fa-info-circle btn" style="top:50px" data-toggle="modal" data-target="#info-modal"></i>
+
+    <!--the info page-->
+    <div class="modal fade" id="info-modal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Scenic Byways of Southwest Oregon, GEOG371, Winter 2017, Lab 5</p>
+                    <p><b>js/storymap.js</b> | Released Date: 03/11/2017 | Version: 1.0 | MIT License </p>
+                    <p><b>Author: Keith Striby</b> | College of Earth, Ocean, Atmospheric Science | Oregon State University </p>
+                    <p>The context about Oregon Scenic Byways was collected in March 2017 from: </p>
+                    <p><a>https://www.oregon.gov/ODOT/HWY/SCENICBYWAYS/pages/driving_guide.aspx</a>.</p>
+                    <p>The favicon image was acquired from <a>http://www.crwflags.com/fotw/flags/us%7Dcasc.html</a></p>
+                    <p>This story map uses geospatial data from mapbox, Microsoft Bing map, Open Street Maps, and USGS.</p>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    var SWOregonCounties_legend ='<i style="background: black; opacity: 0.5"></i><p><b>Oregon Counties</b></p>';
+    var CharlestonBandon_legend ='<i style="background: red; opacity: 0.5"></i><p><b>Charleston to Bandon Tour Route</b></p>';
+    var UmpquaRiver_legend ='<i style="background: blue; opacity: 0.5"></i><p><b>Umpqua River Scenic Byway</b></p>';
+    var CowCreek_legend ='<i style="background: orange; opacity: 0.5"></i><p><b>Cow Creek Tour Route</b></p>';
+    // var MyrtleCreekCanyonville_legend ='<i style="background: yellow; opacity: 0.5"></i><p><b>Myrtle Creek-Canyonville Tour Route</b></p>';
+    var RogueUmpqua_legend ='<i style="background: purple; opacity: 0.5"></i><p><b>Rogue-Umpqua Scenic Byway</b></p>';
+    var OR138CraterKlamathUS97_legend ='<i style="background: green; opacity: 0.5"></i><p><b>Volcanic Legacy Scenic Byway</b></p>';
+
+    var layers = {
+      'bing' : [L.tileLayer.bing('AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L')],
+      'layer 1': [ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+          id: 'mapbox.satellite'}),],
+      'overview': [L.geoJson.ajax('assets/SWOregonCounties.geojson', {
+          color: 'black',
+          weight: 3,
+          opacity: 0.4}), SWOregonCounties_legend],
+      'CharlestonBandon': [L.geoJson.ajax('assets/CharlestonBandon.geojson', {
+          color: 'red',
+          weight: 5,
+          opacity: 0.4}), CharlestonBandon_legend],
+      'UmpquaRiver': [L.geoJson.ajax('assets/UmpquaRiver.geojson', {
+          color: 'blue',
+          weight: 5,
+          opacity: 0.4}), UmpquaRiver_legend],
+      'CowCreek': [L.geoJson.ajax('assets/CowCreek.geojson', {
+          color: 'darkorange',
+          weight: 5,
+          opacity: 0.4}), CowCreek_legend],
+      // 'MyrtleCreekCanyonville': [L.geoJson.ajax('assets/MyrtleCreekCanyonville_2.geojson', {
+      //     color: 'yellow',
+      //     weight: 5,
+      //     opacity: 0.4}), MyrtleCreekCanyonville_legend],
+      'RogueUmpqua': [L.geoJson.ajax('assets/RogueUmpqua.geojson', {
+          color: 'purple',
+          weight: 5,
+          opacity: 0.4}), RogueUmpqua_legend],
+      'OR138CraterKlamathUS97': [L.geoJson.ajax('assets/OR138CraterKlamathUS97.geojson', {
+          color: 'green',
+          weight: 4,
+          opacity: 0.4}), OR138CraterKlamathUS97_legend]
+    };
+
+    var scenes = {
+        overview: {lat: 42.9, lng: -124.15, zoom: 8, layers: ['bing', 'overview']},
+        CharlestonBandon: {lat: 43.2474756, lng: -124.4774149, zoom: 11, layers: ['layer 1', 'CharlestonBandon']},
+        UmpquaRiver: {lat: 43.6107922, lng: -124.1460573, zoom: 10, layers: ['layer 1', 'UmpquaRiver']},
+        CowCreek: {lat: 42.8426608, lng: -123.67, zoom: 11, layers: ['layer 1', 'CowCreek']},
+        // MyrtleCreekCanyonville: {lat: 43.05, lng: -123.4923182, zoom: 10, layers: ['layer 1', 'MyrtleCreekCanyonville']},
+        RogueUmpqua: {lat: 42.8421755, lng: -123.8, zoom: 9, layers: ['layer 1', 'RogueUmpqua']},
+        OR138CraterKlamathUS97: {lat: 42.5022555, lng: -122.7107109, zoom: 9, layers: ['layer 1', 'OR138CraterKlamathUS97']}
+    };
+
+    $('.main').storymap({
+        scenes: scenes,
+        layers: layers,
+        legend: true, // if you do not want a legend feature, you can simply not define the createLegend function.
+        createMap: function () {
+            // create a map in the "map" div, set the view to a given place and zoom
+            var map = L.map('map', {zoomControl: false, scrollWheelZoom: true});
+
+
+            var grayscale = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+                  maxZoom: 18,
+                  minZoom: 6,
+                  attribution: '<a href="http://ceoas.oregonstate.edu/" target="_blank">Keith Striby</a>',
+                  id: 'mapbox.light'}),
+                streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                  maxZoom: 18,
+                  minZoom: 6,
+                  id: 'mapbox.streets',
+                  attribution: '<a href="http://ceoas.oregonstate.edu/" target="_blank">Keith Striby</a>'}),
+                satellite = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+                  maxZoom: 18,
+                  minZoom: 6,
+                  id: 'mapbox.satellite',
+                  attribution: '<a href="http://ceoas.oregonstate.edu/" target="_blank">Keith Striby</a>'});
+
+             var baseLayers = {
+           		"Grayscale": grayscale,
+              "Streets": streets,
+              "Satellite": satellite
+           	};
+
+            L.control.layers(baseLayers).addTo(map);
+
+            // add an base map, which can be either OSM, mapbox, tilelayer, wmslayer or those designed by yourself.
+            // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+            //     maxZoom: 18,
+            //     attribution: '<a href="http://ceoas.oregonstate.edu/" target="_blank">Keith Striby</a>',
+            //     id: 'mapbox.light'
+            // }).addTo(map);
+
+            L.control.scale({position: 'bottomright', metric: false}).addTo(map);
+
+            //create a mini globe as the overview map control.
+            var miniMap = new L.Control.GlobeMiniMap({
+                marker:'red',
+                position: 'bottomright'
+            }).addTo(map);
+
+            return map;
+        }
+    });
+</script>
+</body>
+</html>
